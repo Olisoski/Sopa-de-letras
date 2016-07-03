@@ -36,10 +36,9 @@
             var mytag;
             $(document).ready(function () {
                 mytag = $("#myTags").tagit({
-                    beforeTagAdded: function (event, ui) {
-                       
-                    }
+                    
                 });
+				
                 Crear();
             });
 </script>
@@ -124,8 +123,8 @@
 	var gamePuzzle;
 	function Crear() {
 
-	    datos = mytag[0].textContent.trim().split("×");
-		console.log(mytag[0]);
+	    datos = mytag[0].textContent.trim().split("Ã—");
+		console.log(mytag[0].textContent);
 	    for (i = 0; i < (datos.length)-1; i++) {
 	       words.push(datos[i]);
 
