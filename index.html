@@ -34,18 +34,14 @@
         <script type="text/javascript">
             var mytag;
             $(document).ready(function () {
-                mytag = $("#myTags").tagit({
-                    beforeTagAdded: function (event, ui) {
-                       
-                    }
-                });
+                mytag = $("#myTags").tagit();
                 Crear();
             });
 </script>
 <div class="row  ocultar text-center">
     <br />
     <div class="panel panel-default">
-    <div class="panel-heading"><h4>1.- Escribe las palabras, luego presiona el botón <strong>"Crear Juego"</strong></h4></div>
+    <div class="panel-heading"><h4>1.- Escribe las palabras, luego presiona el botÃ³n <strong>"Crear Juego"</strong></h4></div>
     <div class="panel-body"><ul id="myTags">
     <li>Gato</li>
     <li>Perro</li>
@@ -123,7 +119,7 @@
 	var gamePuzzle;
 	function Crear() {
 
-	    datos = mytag[0].textContent.trim().split("×");
+	    datos = mytag[0].textContent.trim().split("Ã—");
 	    for (i = 0; i < (datos.length)-1; i++) {
 	       words.push(datos[i]);
 
