@@ -3,11 +3,12 @@
 <head>
   <title>Sopa de letras</title>
     <link rel="stylesheet" type="text/css" href="style.css"  media="all">
-    <script   src="https://code.jquery.com/jquery-3.0.0.js"   integrity="sha256-jrPLZ+8vDxt2FnE1zvZXCkCcebI/C8Dt5xyaQBjxQIo="   crossorigin="anonymous"></script>
+    <script language="javascript" type="text/javascript" src="jquery.min.js"></script> 
     <script type="text/javascript" src="wordfind.js"></script> 
     <script type="text/javascript" src="wordfindgame.js"></script> 
 <link rel="stylesheet" href="bootstrap.min.css" >
 <script src="bootstrap.min.js" ></script>
+
 <script src="jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="tag-it.js" type="text/javascript" charset="utf-8"></script>
 <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css">
@@ -34,14 +35,18 @@
         <script type="text/javascript">
             var mytag;
             $(document).ready(function () {
-                mytag = $("#myTags").tagit();
+                mytag = $("#myTags").tagit({
+                    beforeTagAdded: function (event, ui) {
+                       
+                    }
+                });
                 Crear();
             });
 </script>
 <div class="row  ocultar text-center">
     <br />
     <div class="panel panel-default">
-    <div class="panel-heading"><h4>1.- Escribe las palabras, luego presiona el botÃ³n <strong>"Crear Juego"</strong></h4></div>
+    <div class="panel-heading"><h4>1.- Escribe las palabras, luego presiona el botón <strong>"Crear Juego"</strong></h4></div>
     <div class="panel-body"><ul id="myTags">
     <li>Gato</li>
     <li>Perro</li>
@@ -119,7 +124,7 @@
 	var gamePuzzle;
 	function Crear() {
 
-	    datos = mytag[0].textContent.trim().split("Ã—");
+	    datos = mytag[0].textContent.trim().split("×");
 	    for (i = 0; i < (datos.length)-1; i++) {
 	       words.push(datos[i]);
 
