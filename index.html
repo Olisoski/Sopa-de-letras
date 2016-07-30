@@ -1,32 +1,24 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
   <title>Sopa de letras</title>
-    <link rel="stylesheet" type="text/css" href="style.css"  media="all">
-    <script language="javascript" type="text/javascript" src="jquery.min.js"></script> 
-    <script type="text/javascript" src="wordfind.js"></script> 
-    <script type="text/javascript" src="wordfindgame.js"></script> 
-<link rel="stylesheet" href="bootstrap.min.css" >
-<script src="bootstrap.min.js" ></script>
 
-<script src="jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="tag-it.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="style.css"  media="all">
+<link rel="stylesheet" href="bootstrap.min.css" >
 <link rel="stylesheet" type="text/css" href="jquery-ui.css">
 <link href="jquery.tagit.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="jquery.min.js"></script> 
+<script type="text/javascript" src="wordfind.js"></script> 
+<script type="text/javascript" src="wordfindgame.js"></script> 
+<script type="text/javascript" src="bootstrap.min.js" ></script>
+<script type="text/javascript" src="jquery-ui.min.js"  ></script>
+<script type="text/javascript" src="tag-it.js"></script>
+
+
 </head>
 <body>
-    <style media="print">
-        .ocultar {
-            display:none;
-        }
-        .col-md-3 {
-                width: 25%;
-                float: left;
-        }
-        .col-md-9 {
-                    width: 75%;
-                float: left;
-        }
+    <style media="print">.ocultar {display:none;}.col-md-3 { width: 25%;float: left;}.col-md-9 {width: 75%;float: left;}
     </style>
 
 <div class="container">
@@ -35,11 +27,8 @@
         <script type="text/javascript">
             var mytag;
             $(document).ready(function () {
-                mytag = $("#myTags").tagit({
-                    
-                });
-				
-                Crear();
+                mytag = $("#myTags").tagit({});
+				Crear();
             });
 </script>
 <div class="row  ocultar text-center">
@@ -124,9 +113,9 @@
     var words = [];
 	var gamePuzzle;
 	function Crear() {
-
+    
 	    datos = mytag[0].textContent.trim().split("×");
-		console.log(mytag[0].textContent);
+        
 	    for (i = 0; i < (datos.length)-1; i++) {
 	       words.push(datos[i]);
 
@@ -135,11 +124,7 @@
 	    gamePuzzle = wordfindgame.create(datos, '#juego', '#Palabras');
 	    var puzzle = wordfind.newPuzzle(datos, { height: 18, width: 18, fillBlanks: false });
         wordfind.print(puzzle);   
-      
-	  
-	    
-
-        }
+      }
 		$('#solve').click( function() {wordfindgame.solve(gamePuzzle, words);});
     </script>
     </div>
